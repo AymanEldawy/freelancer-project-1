@@ -32,7 +32,7 @@ body {
 .info p {
   padding: 7px;
   color: #2d2d2d;
-  background: #eaea99;
+  background: #f9e10b70;
   margin-top: 20px;
   border-radius: 2px;
   font-weight: bold;
@@ -59,7 +59,7 @@ body {
 }
 
 .table-responsive .row:first-child {
-  background: #222;
+  background: #677df5;
   padding: 5px 2px;
   color: #fff;
 }
@@ -72,5 +72,29 @@ body {
 
 .table-responsive .row .col {
   text-align: center;
+}
+
+.table-responsive .row .col .active {
+  border: 2px solid #2196f3;
+  padding: 10px;
+  border-radius: 7px;
+  background: #2196f33d;
+}
+
+.table-responsive .row .col input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background: #ecebeb;
+  color: #222;
+  border: 2px solid transparent;
+  border-bottom: 2px solid #ccc;
+  -webkit-transition: border 0.2s ease-in-out;
+  transition: border 0.2s ease-in-out;
+}
+
+.table-responsive .row .col input[type="number"]:focus {
+  border: 2px solid #2196f3;
 }
 /*# sourceMappingURL=style.css.map */
