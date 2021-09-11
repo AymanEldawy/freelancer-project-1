@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@500;600;700&display=swap");
+
 *,
 html,
 body {
@@ -9,6 +11,15 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  background-image: linear-gradient(
+    to top,
+    #ff9a9e 0%,
+    #fecfef 99%,
+    #fecfef 100%
+  );
+}
 .container {
   width: 80%;
   padding: 0 13px;
@@ -17,10 +28,11 @@ body {
 }
 
 .info {
+  margin-top:20px;
   h1 {
     margin: 20px;
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   h2 {
     font-size: 1.2rem;
@@ -28,36 +40,60 @@ body {
   }
   p {
     padding: 7px;
-    color: #2d2d2d;
-    background: #f9e10b70;
     margin-top: 20px;
     border-radius: 2px;
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    padding: 11px;
+    color: #111;
     font-weight: bold;
   }
 }
 .table-responsive {
-  margin-top: 30px;
-  border-top: 2px solid #ccc;
-  padding-top: 20px;
+  background-image: linear-gradient(
+    to top,
+    #ff9a9e 0%,
+    #fecfef 99%,
+    #fecfef 100%
+  );
+  box-shadow: 0 0 5px #0e0e0e21;
+  margin-top: 20px;
+  padding-top: 0;
   .row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    margin-top: 10px;
-    &:first-child {
-      background: #677df5;
-      padding: 5px 2px;
+    margin: 10px 0;
+    padding: 5px 10px;
+    &:nth-child(odd) {
+      background: inherit;
+    }
+    .col:first-child {
+      padding: 5px 10px;
+      border-radius: 25px;
+      background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: #fff;
+    }
+    &:last-child,
+    &:first-child {
+      background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 5px 10px;
+      color: #fff;
+      .col {
+        background: none;
+        border: none;
+      }
+    }
+    &:last-child {
       .col:first-child {
-        padding: 5px 2px;
-        color: #fff;
-        background: inherit;
       }
     }
 
     .col {
       text-align: center;
+      label {
+        font-weight: 500;
+      }
       .active {
         border: 2px solid #2196f3;
         padding: 10px;
@@ -76,6 +112,7 @@ body {
         transition: border 0.2s ease-in-out;
         &:focus {
           border: 2px solid #2196f3;
+          outline: 0;
         }
       }
     }

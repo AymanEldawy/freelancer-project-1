@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@500;600;700&display=swap");
 *,
 html,
 body {
@@ -11,6 +12,12 @@ body {
           box-sizing: border-box;
 }
 
+body {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#ff9a9e), color-stop(99%, #fecfef), to(#fecfef));
+  background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+}
+
 .container {
   width: 80%;
   padding: 0 13px;
@@ -18,10 +25,14 @@ body {
   max-width: 1170px;
 }
 
+.info {
+  margin-top: 20px;
+}
+
 .info h1 {
   margin: 20px;
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.2rem;
 }
 
 .info h2 {
@@ -31,17 +42,21 @@ body {
 
 .info p {
   padding: 7px;
-  color: #2d2d2d;
-  background: #f9e10b70;
   margin-top: 20px;
   border-radius: 2px;
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  padding: 11px;
+  color: #111;
   font-weight: bold;
 }
 
 .table-responsive {
-  margin-top: 30px;
-  border-top: 2px solid #ccc;
-  padding-top: 20px;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#ff9a9e), color-stop(99%, #fecfef), to(#fecfef));
+  background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+  -webkit-box-shadow: 0 0 5px #0e0e0e21;
+          box-shadow: 0 0 5px #0e0e0e21;
+  margin-top: 20px;
+  padding-top: 0;
 }
 
 .table-responsive .row {
@@ -55,23 +70,38 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   text-align: center;
-  margin-top: 10px;
+  margin: 10px 0;
+  padding: 5px 10px;
 }
 
-.table-responsive .row:first-child {
-  background: #677df5;
-  padding: 5px 2px;
-  color: #fff;
-}
-
-.table-responsive .row:first-child .col:first-child {
-  padding: 5px 2px;
-  color: #fff;
+.table-responsive .row:nth-child(odd) {
   background: inherit;
+}
+
+.table-responsive .row .col:first-child {
+  padding: 5px 10px;
+  border-radius: 25px;
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+}
+
+.table-responsive .row:last-child, .table-responsive .row:first-child {
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 5px 10px;
+  color: #fff;
+}
+
+.table-responsive .row:last-child .col, .table-responsive .row:first-child .col {
+  background: none;
+  border: none;
 }
 
 .table-responsive .row .col {
   text-align: center;
+}
+
+.table-responsive .row .col label {
+  font-weight: 500;
 }
 
 .table-responsive .row .col .active {
@@ -96,5 +126,6 @@ body {
 
 .table-responsive .row .col input[type="number"]:focus {
   border: 2px solid #2196f3;
+  outline: 0;
 }
 /*# sourceMappingURL=style.css.map */
