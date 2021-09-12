@@ -21,14 +21,14 @@ body {
   );
 }
 .container {
-  width: 80%;
+  width: 100%;
   padding: 0 13px;
   margin: 0 auto;
   max-width: 1170px;
 }
 
 .info {
-  margin-top:20px;
+  margin-top: 20px;
   h1 {
     margin: 20px;
     text-align: center;
@@ -114,6 +114,122 @@ body {
           border: 2px solid #2196f3;
           outline: 0;
         }
+      }
+    }
+  }
+}
+
+.show-result {
+  border-radius: 50px;
+  border: 2px solid transparent;
+  padding: 12px 20px;
+  margin: 20px auto;
+  display: block;
+  font-size: 17px;
+  font-weight: bold;
+  transition: all 0.2s ease-in;
+  &:hover {
+    color: #2196f3;
+    border: 2px solid #2196f3;
+  }
+}
+
+.details {
+  margin-top: 20px;
+}
+.rules {
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  p {
+    padding: 5px;
+    color: #2b2a2a;
+    margin: 5px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      background: #dedddd;
+      -webkit-box-shadow: 0 2px 5px #9a9a9a85;
+      box-shadow: 0 2px 5px #9a9a9a85;
+      padding: 7px;
+    }
+  }
+  ul {
+    padding-right: 50px;
+    li {
+      padding: 5px;
+      list-style: persian;
+    }
+  }
+}
+
+.design-two {
+  background: #d2d2d2;
+  .info p {
+    background: #ff9;
+  }
+  .table-responsive {
+    background: #fff;
+    .row:nth-child(odd) {
+      background: #e8e8e8;
+    }
+    .row:first-child,
+    .row .col:first-child {
+      background: #2196f3;
+    }
+    .row:last-child {
+      // background: #3f51b5;
+      background: #2196f3;
+    }
+  }
+}
+
+.table-result {
+  background: #fff;
+
+  .row-head {
+    background: #2196f3;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    > .col {
+      width: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-left: 1px solid #ccc;
+      margin-left: 6px;
+    }
+    .row {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      > .col {
+        text-align: center;
+      }
+      .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .row {
+      .col {
+      }
+    }
+  }
+  .row-body {
+    .row {
+      margin:5px 0;
+      display:flex;
+      .col{
+        flex:1;
+        text-align:center;
+      }
+      .col:first-child {
+        max-width: 150px;
       }
     }
   }
