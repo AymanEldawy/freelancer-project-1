@@ -18,6 +18,10 @@ body {
   background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
 }
 
+body hr {
+  border-color: #ff9a9e;
+}
+
 .container {
   width: 100%;
   padding: 0 13px;
@@ -205,12 +209,21 @@ body {
   background: #2196f3;
 }
 
-.table-result {
+.design-two .table-result {
   background: #fff;
 }
 
-.table-result .row-head {
+.design-two .table-result .row-head {
   background: #2196f3;
+}
+
+.table-result {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#ff9a9e), color-stop(99%, #fecfef), to(#fecfef));
+  background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+}
+
+.table-result .row-head {
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: #fff;
   padding: 10px;
   display: -webkit-box;
@@ -219,7 +232,7 @@ body {
 }
 
 .table-result .row-head > .col {
-  width: 150px;
+  max-width: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -231,6 +244,7 @@ body {
           justify-content: center;
   border-left: 1px solid #ccc;
   margin-left: 6px;
+  padding-left: 5px;
 }
 
 .table-result .row-head .row {
@@ -279,5 +293,42 @@ body {
 
 .table-result .row-body .row .col:first-child {
   max-width: 150px;
+}
+
+@media (max-width: 600px) {
+  .table-responsive .row {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    position: relative;
+    padding-top: 50px;
+    margin: 10px 0;
+    padding: 10px 20px;
+    padding-top: 50px;
+  }
+  .table-responsive .row:first-child .col {
+    display: none;
+  }
+  .table-responsive .row:first-child .col:nth-child(2),
+  .table-responsive .row:first-child .col:nth-child(3) {
+    display: block;
+  }
+  .table-responsive .row .col:first-child {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    width: 100% !important;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    max-width: 50px;
+  }
+  .table-responsive .row .col {
+    width: 50%;
+  }
+  .row-head > .col {
+    width: 150px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
