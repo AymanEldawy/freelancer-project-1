@@ -143,19 +143,25 @@ body {
     padding: 3px 11px;
     color: #027707;
     border-radius: 20px;
+    &:after,
     &:before {
       content: "";
       position: absolute;
       top: 50%;
       left: -15px;
-      height: 2px;
+      height: 3px;
       width: 20px;
       background: inherit;
     }
-  }
-  .box-col:first-of-type {
-    border-right: 2px solid #9eff6257;
-    padding-right: 15px;
+    &:after{
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      left: -15px;
+    }
+
+    
   }
   &:visited,
   &:hover {
