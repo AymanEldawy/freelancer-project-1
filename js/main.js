@@ -157,44 +157,13 @@ function getFinalResult() {
 
 // document
 
-// function checkByRow(element) {
+function checkByRow(element) {
 //   let indexVal = {};
 //   let star = 0;
 //   console.log(indexVal)
 //   if (Object.keys(indexVal).includes(``)) {
 //     //
-//     function rating() {
-//       function executeRating(stars) {
-//         const starClassActive = "rating__star fa fa-star";
-//         const starClassInactive = "rating__star fa fa-star-o";
-//         const starsLength = stars.length;
-//         let i;
-//         indexVal[stars] = stars
-//         stars.map((star) => {
-//           star.onclick = () => {
-//             i = stars.indexOf(star);
-//             if (star.className === starClassInactive) {
-//               for (i; i >= 0; --i)
-//                 stars[i].className = starClassActive + ` active`;
-//             } else {
-//               for (i; i < starsLength; ++i)
-//                 stars[i].className = starClassInactive;
-//             }
-//           };
-//         });
-//       }
-//       for (let i = 1; i < 26; i++) {
-//         for (let j = 1; j < 7; j++) {
-//           let ratingStars = [
-//             ...document.querySelectorAll(
-//               `.check-${i} .box-col:nth-of-type(${j}) .rating__star`
-//             ),
-//           ];
-//           executeRating(ratingStars);
-//         }
-//       }
-//     }
-//     rating();
+    
 //   }
 //   let id = element.id;
 //   for (let i = 1; i < 6; i++) {
@@ -207,4 +176,36 @@ function getFinalResult() {
 //   }
 //   // document.querySelectorAll(`#${id} .box-col`).length;
 //   // console.log(document.querySelectorAll(`#${id} .box-col`).length);
-// }
+}
+function rating() {
+  function executeRating(stars) {
+    const starClassActive = "rating__star fa fa-star";
+    const starClassInactive = "rating__star fa fa-star-o";
+    const starsLength = stars.length;
+    let i;
+    // indexVal[stars] = stars
+    stars.map((star) => {
+      star.onclick = () => {
+        i = stars.indexOf(star);
+        if (star.className === starClassInactive) {
+          for (i; i >= 0; --i)
+            stars[i].className = starClassActive + ` active`;
+        } else {
+          for (i; i < starsLength; ++i)
+            stars[i].className = starClassInactive;
+        }
+      };
+    });
+  }
+  for (let i = 1; i < 26; i++) {
+    for (let j = 1; j < 7; j++) {
+      let ratingStars = [
+        ...document.querySelectorAll(
+          `.check-${i} .box-col:nth-of-type(${j}) .rating__star`
+        ),
+      ];
+      executeRating(ratingStars);
+    }
+  }
+}
+rating();
