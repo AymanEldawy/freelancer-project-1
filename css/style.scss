@@ -300,10 +300,6 @@ body {
   opacity: 0;
   pointer-events: none;
   transition: all 0.2s ease-in-out;
-  &.show {
-    opacity: 1;
-    pointer-events: unset;
-  }
   .fa-times {
     background: #ff222245;
     padding: 20px;
@@ -313,6 +309,36 @@ body {
     border: 1px solid;
     cursor: pointer;
     order: 2;
+  }
+  &.show {
+    opacity: 1;
+    pointer-events: unset;
+  }
+  // .result {
+  //   display:block;
+  // }
+  .err-msg {
+    display:none;
+  }
+  &.msg {
+    .err-msg {
+      display:block;
+    }
+    .results {
+      display:none;
+    }
+    
+    i {
+      padding: 10px;
+      margin-top: 10px;
+    }
+  }
+  .err-msg {
+    padding: 20px;
+    background: #5e1a1a;
+    color: #fff;
+    font-size: 25px;
+    
   }
 }
 

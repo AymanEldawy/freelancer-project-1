@@ -41,49 +41,16 @@ window.addEventListener("DOMContentLoaded", () => {
     if (checkIfAllElementRating()) {
       getFinalResult();
       document.querySelector(".modal").classList.add("show");
+    } else {
+      document.querySelector(".modal").classList = 'modal show msg';
     }
   });
-  // document
-  //   .querySelectorAll(".box-col")
-  //   .forEach((item) => item.addEventListener("click", () => requireChoose()));
   document
     .querySelectorAll(".check")
     .forEach((check) =>
       check.addEventListener("click", () => checkByRow(check))
     );
 });
-// Required choose
-// function requireChoose() {
-//   // document.querySelectorAll('.check').forEach(row => {
-//   //   row.addEventListener('click', () => {
-//   //     let indexValue = [];
-//   //     row.children.forEach
-//   //     row = document.querySelectorAll(
-//   //       `.check-${i} .box-col:nth-of-type(${j}) .active`
-//   //     ).length
-//   //   })
-//   // })
-
-//   for (let i = 1; i < 26; i++) {
-//     let elements = 0;
-//     for (let j = 1; j < 6; j++) {
-//       let row = document.querySelectorAll(
-//         `.check-${i} .box-col:nth-of-type(${j}) .active`
-//       ).length;
-//       if (row !== null) {
-//         if (!indexValue.includes(row)) {
-//           indexValue.push(row);
-//           elements++;
-//         } else console.log(row);
-//         // console.log(row)
-//       } else {
-//       }
-//     }
-//     if (elements >= 4) {
-//     }
-//   }
-// }
-// requireChoose();
 function checkIfAllElementRating() {
   let checkElement = 124;
   for (let i = 1; i < 26; i++) {
@@ -157,55 +124,43 @@ function getFinalResult() {
 
 // document
 
-function checkByRow(element) {
-//   let indexVal = {};
-//   let star = 0;
-//   console.log(indexVal)
-//   if (Object.keys(indexVal).includes(``)) {
-//     //
-    
-//   }
-//   let id = element.id;
-//   for (let i = 1; i < 6; i++) {
-//     // let className = row.className;
-//     let rateLen =
-//       document.querySelectorAll(
-//         `#${id} .box-col:nth-of-type(${i}) .rating .active`
-//       ) || "empty";
-//     indexVal[rateLen.length] = rateLen.length;
-//   }
-//   // document.querySelectorAll(`#${id} .box-col`).length;
-//   // console.log(document.querySelectorAll(`#${id} .box-col`).length);
-}
-function rating() {
+
+let indexVal = {};
+document.querySelectorAll('.check').forEach(check => indexVal[check.id] = {});
+
+function checkByRow(check) {
+  // indexVal[] = {}
   function executeRating(stars) {
     const starClassActive = "rating__star fa fa-star";
     const starClassInactive = "rating__star fa fa-star-o";
     const starsLength = stars.length;
     let i;
-    // indexVal[stars] = stars
+    let index = i;
     stars.map((star) => {
       star.onclick = () => {
         i = stars.indexOf(star);
         if (star.className === starClassInactive) {
-          for (i; i >= 0; --i)
-            stars[i].className = starClassActive + ` active`;
+          indexVal[check.id] = { i: i + 1 }
+          console.log(indexVal)
+          for (i; i >= 0; --i) {
+            stars[i].className = starClassActive + ` active`
+          };
         } else {
-          for (i; i < starsLength; ++i)
-            stars[i].className = starClassInactive;
+          for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
         }
       };
     });
+    return starsLength
   }
-  for (let i = 1; i < 26; i++) {
-    for (let j = 1; j < 7; j++) {
-      let ratingStars = [
-        ...document.querySelectorAll(
-          `.check-${i} .box-col:nth-of-type(${j}) .rating__star`
-        ),
-      ];
-      executeRating(ratingStars);
-    }
+  let checkId = check.id;
+  for (let j = 1; j < 7; j++) {
+    let ratingStars = [
+      ...document.querySelectorAll(
+        `#${checkId} .box-col:nth-of-type(${j}) .rating__star`
+      ),
+    ];
+    let a = executeRating(ratingStars);
+    console.log(a)
   }
+  console.log(indexVal);
 }
-rating();
