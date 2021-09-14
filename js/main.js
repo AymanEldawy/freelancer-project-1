@@ -29,6 +29,8 @@ function result() {
     <span>${getResultByCol(5)}</span>
   </div>
   `;
+  } else {
+    document.querySelector(".modal").classList = 'modal show msg';
   }
 }
 
@@ -40,7 +42,7 @@ window.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".open-modal").addEventListener("click", () => {
     if (checkIfAllElementRating()) {
       getFinalResult();
-      document.querySelector(".modal").classList.add("show");
+      document.querySelector(".modal").classList = "modal show";
     } else {
       document.querySelector(".modal").classList = 'modal show msg';
     }
