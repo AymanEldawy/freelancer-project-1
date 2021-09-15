@@ -121,46 +121,6 @@ function getFinalResult() {
   `;
   }
 }
-// let allRowObject = {};
-// document.querySelectorAll(".check").forEach((check) => {
-//   allRowObject[check.id] = new Set();
-// });
-// function checkByRow(check) {
-//   let checkId = check.id;
-//   function executeRating(stars) {
-//     const starClassActive = "rating__star fa fa-star";
-//     const starClassInactive = "rating__star fa fa-star-o";
-//     const starsLength = stars.length;
-//     let i;
-//     stars.map((star) => {
-//       star.onclick = () => {
-//         i = stars.indexOf(star);
-//         // allRowObject[check.id].valueOf().delete(i + 1);
-//         if (!allRowObject[check.id].valueOf().has(i + 1)) {
-//           if (star.className === starClassInactive) {
-//             let index = 0;
-//             for (i; i >= 0; --i) {
-//               index++;
-//               stars[i].className = starClassActive + ` active`;
-//             }
-//             allRowObject[check.id][star.parentElement] = index;
-//           } else {
-//             for (i; i < starsLength; ++i)
-//               stars[i].className = starClassInactive;
-//           }
-//         }
-//       };
-//     });
-//   }
-//   for (let j = 1; j < 7; j++) {
-//     let ratingStars = [
-//       ...document.querySelectorAll(
-//         `#${checkId} .box-col:nth-of-type(${j}) .rating__star`
-//       ),
-//     ];
-//     executeRating(ratingStars);
-//   }
-// }
 function rating() {
   function executeRating(stars) {
     const starClassActive = "rating__star fa fa-star";
@@ -170,13 +130,21 @@ function rating() {
     stars.map((star) => {
       star.onclick = () => {
         i = stars.indexOf(star);
-        if (star.className === starClassInactive) {
-          let index = 0;
-          for (i; i >= 0; --i) {
-            stars[i].className = starClassActive + ` active`;
+        let classChoose = `choose-${i + 1}`
+        let checkIfActiveChoose = false;
+        let elementChildren = document.querySelectorAll(`#${stars[i].offsetParent.id} .box-col`)
+        elementChildren.forEach(child => {
+          if(child.classList.contains(classChoose)) checkIfActiveChoose = true;
+        })
+        stars[i].parentElement.parentElement.classList = `${classChoose}  box-col `
+        if(! checkIfActiveChoose){
+          if (star.className === starClassInactive) {
+            for (i; i >= 0; --i) {
+              stars[i].className = starClassActive + ` active`;
+            }
+          } else {
+            for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
           }
-        } else {
-          for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
         }
       };
     });
